@@ -1,0 +1,46 @@
+code,label,group
+1,All Students,All Students
+3,Males,Gender
+4,Females,Gender
+6,Fluent-English Proficient and English Only,English-Language Fluency
+7,Initially-Fluent English Proficient (I-FEP),English-Language Fluency
+8,Reclassified-Fluent English Proficient (R-FEP),English-Language Fluency
+28,Migrant Education,Migrant
+31,Economically Disadvantaged,Economic Status
+74,Black or African American,Ethnicity
+75,American Indian or Alaska Native,Ethnicity
+76,Asian,Ethnicity
+77,Filipino,Ethnicity
+78,Hispanic or Latino,Ethnicity
+79,Native Hawaiian or Pacific Islander,Ethnicity
+80,White,Ethnicity
+90,Not a High School Graduate,Parent Education
+91,High School Graduate,Parent Education
+92,Some College (Includes AA Degree),Parent Education
+93,College Graduate,Parent Education
+94,Graduate School/Post Graduate,Parent Education
+99,Students with No Reported Disability,Disability Status
+111,Not Economically Disadvantaged,Economic Status
+120,English Learners Enrolled in School in the U.S. Less Than 12 Months,English-Language Fluency
+121,Parent Education -- Declined to State,Parent Education
+128,Students with Disability,Disability Status
+142,English Learners Enrolled in School in the U.S. 12 Months or More,English-Language Fluency
+144,Ethnicity -- Two or More Races,Ethnicity
+160,English Learner,English-Language Fluency
+180,English Only,English-Language Fluency
+200,Black or African American,Ethnicity for Economically Disadvantaged
+201,American Indian or Alaska Native,Ethnicity for Economically Disadvantaged
+202,Asian,Ethnicity for Economically Disadvantaged
+203,Filipino,Ethnicity for Economically Disadvantaged
+204,Hispanic or Latino,Ethnicity for Economically Disadvantaged
+205,Native Hawaiian or Pacific Islander,Ethnicity for Economically Disadvantaged
+206,White,Ethnicity for Economically Disadvantaged
+207,Ethnicity -- Two or More Races,Ethnicity for Economically Disadvantaged
+220,Black or African American,Ethnicity for Not Economically Disadvantaged
+221,American Indian or Alaska Native,Ethnicity for Not Economically Disadvantaged
+222,Asian,Ethnicity for Not Economically Disadvantaged
+223,Filipino,Ethnicity for Not Economically Disadvantaged
+224,Hispanic or Latino,Ethnicity for Not Economically Disadvantaged
+225,Native Hawaiian or Pacific Islander,Ethnicity for Not Economically Disadvantaged
+226,White,Ethnicity for Not Economically Disadvantaged
+227,Ethnicity -- Two or More Races,Ethnicity for Not Economically Disadvantaged
