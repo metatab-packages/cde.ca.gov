@@ -10,6 +10,9 @@ REPO_ROOT=$(shell git rev-parse --show-toplevel)
 
 PACK_DIR=$(REPO_ROOT)/_build
 
+GROUP=$(and $(CKAN_GROUP),"-g $(CKAN_GROUP)" )
+TAG=$(and $(CKAN_TAG),"-t $(CKAN_TAG)" )
+
 .PHONY: $(PACK_DIR) clean build s3 ckan list info
 	
 default: build ;
@@ -51,7 +54,7 @@ $(PACK_DIR)/%.s3: $(PACK_DIR)/%.build
 	
 $(PACK_DIR)/%.ckan: $(PACK_DIR)/%.s3
 	@echo ======== CKAN $* \( $@ \) =======
-	mp ckan  $* && touch $(PACK_DIR)/$*.ckan 
+	mp ckan $(GROUP) $(TAG) $* && touch $(PACK_DIR)/$*.ckan 
 	touch -r $(PACK_DIR)/$*.build $*/metadata.csv # mp ckan updates the metadata, but we don't want to re-trigger build
 
 
@@ -60,6 +63,7 @@ $(PACK_DIR)/%.ckan: $(PACK_DIR)/%.s3
 $(PACKAGE_NAMES): %:$(PACK_DIR)/%.build ; 
 
 # Make all packages 
+	
 
 info:
 	@echo ======
