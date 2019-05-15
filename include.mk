@@ -57,6 +57,10 @@ $(PACK_DIR)/%.ckan: $(PACK_DIR)/%.s3
 	mp ckan $(GROUP) $(TAG) $* && touch $(PACK_DIR)/$*.ckan 
 	touch -r $(PACK_DIR)/$*.build $*/metadata.csv # mp ckan updates the metadata, but we don't want to re-trigger build
 
+$(PACK_DIR)/%.wp: $(PACK_DIR)/%.s3
+	@echo ======== Wordpress $* \( $@ \) =======
+	mp wp $(GROUP) $(TAG) -p -s $(METAPACK_WP_SITE) $* && touch $(PACK_DIR)/$*.wp 
+	
 
 # Make a package, using the packages'
 # non-versioned names

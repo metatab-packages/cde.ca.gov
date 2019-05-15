@@ -5,6 +5,9 @@
 
 CKAN_GROUP=education
 
+.PHONY: wordpress
+	
+
 PACKAGE_NAMES=\
 cde.ca.gov-absenteeism \
 cde.ca.gov-current_expense \
@@ -20,3 +23,4 @@ cde.ca.gov-reimbursements
 # cde.ca.gov-accountability_dashboard
 
 include include.mk
+
