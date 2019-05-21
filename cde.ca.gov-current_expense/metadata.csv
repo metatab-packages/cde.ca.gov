@@ -1,29 +1,29 @@
-Declare,metatab-latest,,,,,,,
-Title,Current Expense of Education,,,,,,,
-Description,Calculation of current expense (cost) of education per average daily attendance,,,,,,,
-Description,(ADA) pursuant to Education Code Section 41372.,,,,,,,
-Identifier,10b6d66b-b69b-4031-be76-cebf5fce2875,,,,,,,
-Name,cde.ca.gov-current_expense-1,,,,,,,
-Dataset,current_expense,,,,,,,
-Origin,cde.ca.gov,,,,,,,
-Time,,,,,,,,
-Space,,,,,,,,
-Grain,,,,,,,,
-Variant,,,,,,,,
-Version,1,,,,,,,
-Created,2019-03-14T18:02:12,,,,,,,
-Modified,2019-03-14T20:17:55,,,,,,,
-Giturl,https://github.com/Metatab/metatab-packages.git,,,,,,,
-,,,,,,,,
+Declare,metatab-latest
+Title,Current Expense of Education
+Description,Calculation of current expense (cost) of education per average daily attendance
+Description,(ADA) pursuant to Education Code Section 41372.
+Identifier,10b6d66b-b69b-4031-be76-cebf5fce2875
+Name,cde.ca.gov-current_expense-2
+Dataset,current_expense
+Origin,cde.ca.gov
+Time,
+Space,
+Grain,
+Variant,
+Version,2
+Created,2019-03-14T18:02:12
+Modified,2019-05-21T04:36:52
+Giturl,https://github.com/Metatab/metatab-packages.git
+""
 Section,Contacts,Email,Organization,Url,,,,
 Wrangler,Eric Busboom,eric@civicknowledge.com,Civic Knowledge,http://civicknowledge.com,,,,
-,,,,,,,,
+""
 Section,Documentation,Title,Description,,,,,
 Documentation,file:README.md,README,,,,,,
 Homepage,https://www.cde.ca.gov/ds/fd/ec/currentexpense.asp,Homepage for the dataset,,,,,,
-,,,,,,,,
+""
 Section,References,Name,Description,,,,,
-,,,,,,,,
+""
 Section,Resources,Name,Description,Encoding,HeaderLines,StartLine,schema,year
 Datafile,https://www.cde.ca.gov/ds/fd/ec/documents/costofed9899.xls,current_expense_98,Current Expense file for academic year 1998,ascii,6,7,current_expense_98,1998
 Datafile,https://www.cde.ca.gov/ds/fd/ec/documents/costofed9900.xls,current_expense_99,Current Expense file for academic year 1999,ascii,7,8,current_expense_98,1999
@@ -46,7 +46,7 @@ Datafile,https://www.cde.ca.gov/ds/fd/ec/documents/currentexpense1516.xls,curren
 Datafile,https://www.cde.ca.gov/ds/fd/ec/documents/currentexpense1617.xlsx,current_expense_16,Current Expense file for academic year 2016,ascii,8,9,current_expense_11,2016
 Datafile,https://www.cde.ca.gov/ds/fd/ec/documents/currentexpense1718.xlsx,current_expense_17,Current Expense file for academic year 2017,ascii,10,11,current_expense_11,2017
 Datafile,python:pylib#combine,combined_current_expense,"Combined file, includes all years",,,,combined_current_expense,
-,,,,,,,,
+""
 Section,Schema,DataType,AltName,Description,,,,
 Table,current_expense_98,,,,,,,
 Table.Column,CO,integer,county,,,,,
@@ -85,7 +85,7 @@ Table.Column,year,integer,,Year of the original source file,,,,
 Table.Column,county,integer,,County FIPS number,,,,
 Table.Column,district,string,,District name,,,,
 Table.Column,lea_id,integer,,"District code, the D  part of the CDS code",,,,
-Table.Column,expenditures,number,,"Total district expenditures (EDP 365), in current dollars. ",,,,
+Table.Column,expenditures,number,,"Total district expenditures (EDP 365), in current dollars.",,,,
 Table.Column,ada,number,,Average Daily attendance used for the cost per ada calculation,,,,
 Table.Column,cost_per_ada,number,,Cost per average daily attendance,,,,
 Table.Column,lea_type,string,,Type of district: High school Elementary or Unified,,,,
