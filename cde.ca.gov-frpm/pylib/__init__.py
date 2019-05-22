@@ -38,7 +38,7 @@ def combined(resource, doc, env, *args, **kwargs):
 
     for r in doc.resources():
         
-        if r.name == 'combined':
+        if r.name == 'free_rp_meals':
             continue
         
         for d in r.iterdict:

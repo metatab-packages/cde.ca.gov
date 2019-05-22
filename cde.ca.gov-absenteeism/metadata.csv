@@ -1,31 +1,31 @@
-Declare,metatab-latest,,,,
-Title,Chronic Absenteeism,,,,
-Description,"Student absenteeism data by ethnicity, gender, program subgroup, and grade span.",,,,
-Description,"Chronic absenteeism counts, cumulative enrollment, and chronic absenteeism rate",,,,
-Description,data are provided.,,,,
-Identifier,dc7e52e4-d49d-4c2a-870c-f65e80058824,,,,
-Name,cde.ca.gov-absenteeism-1,,,,
-Dataset,absenteeism,,,,
-Origin,cde.ca.gov,,,,
-Version,2,,,,
-Created,2019-04-03T21:13:57,,,,
-Modified,2019-05-22T16:27:36,,,,
-Giturl,https://github.com/Metatab/metatab-packages.git,,,,
-,,,,,
+Declare,metatab-latest
+Title,Chronic Absenteeism
+Description,"Student absenteeism data by ethnicity, gender, program subgroup, and grade span."
+Description,"Chronic absenteeism counts, cumulative enrollment, and chronic absenteeism rate"
+Description,data are provided.
+Identifier,dc7e52e4-d49d-4c2a-870c-f65e80058824
+Name,cde.ca.gov-absenteeism-2
+Dataset,absenteeism
+Origin,cde.ca.gov
+Version,2
+Created,2019-04-03T21:13:57
+Modified,2019-05-22T19:00:15
+Giturl,https://github.com/Metatab/metatab-packages.git
+""
 Section,Contacts,Email,Organization,Url,
 Wrangler,Eric Busboom,eric@civicknowledge.com,Civic Knowledge,http://civicknowledge.com,
-,,,,,
+""
 Section,Documentation,Title,Description,,
 Documentation,file:README.md,README,,,
 Homepage,https://www.cde.ca.gov/ds/sd/sd/filesabd.asp,Dataset Homepage,,,
-,,,,,
+""
 Section,References,Name,Description,Year,Group
 Reference,ftp://ftp.cde.ca.gov/demo/attendance/ChrAbsRate1718.txt#target_format=tsv,chab17,Chronic Absenteeism 2017-2018,17,chronic
 Reference,ftp://ftp.cde.ca.gov/demo/attendance/ChrAbsRate1617.txt#target_format=tsv,chab16,Chronic Absenteeism 2016-2017,16,chronic
-,,,,,
+""
 Section,Resources,Name,Description,Group,RefArgs
 Datafile,python:metapack.rowgenerator#copy_reference_group_schema,chronic_absenteeism,Combined Chronic Absenteeism files,chronic,Year
-,,,,,
+""
 Section,Schema,AltName,DataType,Transform,Description
 Table,chab17,,,,
 Table.Column,﻿AcademicYear,academic_year,string,,
@@ -57,8 +57,8 @@ Table.Column,Cumulative Enrollment,cumulative_enrollment,string,,
 Table.Column,Chronic Absenteeism Count,chronic_absenteeism_count,string,,
 Table.Column,Chronic Absenteeism Rate,chronic_absenteeism_rate,string,,
 Table,chronic_absenteeism,,,,
-Table.Column,year,,integer,,
-Table.Column,academic_year,,integer,^robust_int,The academic year (July 1 – June 30) corresponding to the time period during which the data were collected.
+Table.Column,year,,integer,,Year taken from the source dataset name.
+Table.Column,academic_year,,string,,The academic year (July 1 – June 30) corresponding to the time period during which the data were collected.
 Table.Column,aggregate_level,,string,,"T = State
 C = County
 D1 = District (All Schools)

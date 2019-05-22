@@ -3,10 +3,11 @@
 ## for comments and course-enrollments
 ##
 
-CKAN_GROUP=education
+GROUPS=cde.ca.gov
+TAGS=education
+WP_SITE=data.sandiegodata.org
 
-.PHONY: wordpress
-	
+S3_BUCKET=library.metatab.org
 
 PACKAGE_NAMES=\
 cde.ca.gov-absenteeism \
@@ -22,5 +23,5 @@ cde.ca.gov-reimbursements
 # This one is broken
 # cde.ca.gov-accountability_dashboard
 
-include include.mk
 
+include $(shell mp mk)

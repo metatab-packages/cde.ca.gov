@@ -26,7 +26,7 @@ Documentation,https://www.cde.ca.gov/ds/sd/sd/filescupc1617.asp,Source file over
 ,,,,,,,
 Section,References,Name,Description,,,,
 ,,,,,,,
-Section,Resources,Name,Description,year,HeaderLines,StartLine,schema
+Section,Resources,Name,Description,year,Headers,Start,schema
 Datafile,https://www.cde.ca.gov/ds/sd/sd/documents/cupc1314.xls#1,upc_13_lea,"Unduplicated pupil count, academic year 2013, LEA Level",2013,,,upc_13
 Datafile,https://www.cde.ca.gov/ds/sd/sd/documents/cupc1314.xls#2,upc_13_school,"Unduplicated pupil count, academic year 2013, School Level",2013,,,upc_13
 Datafile,https://www.cde.ca.gov/ds/sd/sd/documents/cupc1415.xls#1,upc_14_lea,"Unduplicated pupil count, academic year 2014, LEA Level",2014,,,upc_14
