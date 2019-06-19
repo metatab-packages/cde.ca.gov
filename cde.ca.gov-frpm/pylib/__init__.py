@@ -41,6 +41,9 @@ def combined(resource, doc, env, *args, **kwargs):
         if r.name == 'free_rp_meals':
             continue
         
+        if not hasattr(r, 'year'):
+            continue
+        
         for d in r.iterdict:
             yield [r.year] + [ d.get(c) for c in cols]
             
