@@ -1,23 +1,23 @@
-Declare,metatab-latest
-Title,CAASPP Test Results
-Description,California Assessment of Student Performance and Progress
-Identifier,53aa8d74-3d26-4bc1-94fe-5282ecd3b189
-Name,cde.ca.gov-caaspp-2015e-1
-Dataset,caaspp
-Origin,cde.ca.gov
-Time,2015e
-Space,
-Grain,
-Variant,
-Version,1
-Created,04/19/19 09:54 PM
-Modified,2019-04-22T17:42:03
-Giturl,https://github.com/metatab-packages/cde.ca.gov.git
-
+Declare,metatab-latest,,,,,
+Title,CAASPP Test Results,,,,,
+Description,California Assessment of Student Performance and Progress,,,,,
+Identifier,53aa8d74-3d26-4bc1-94fe-5282ecd3b189,,,,,
+Name,cde.ca.gov-caaspp-2015e-1,,,,,
+Dataset,caaspp,,,,,
+Origin,cde.ca.gov,,,,,
+Time,2015e,,,,,
+Space,,,,,,
+Grain,,,,,,
+Variant,,,,,,
+Version,1,,,,,
+Created,04/19/19 09:54 PM,,,,,
+Modified,2019-04-22T17:42:03,,,,,
+Giturl,https://github.com/metatab-packages/cde.ca.gov.git,,,,,
+,,,,,,
 Section,Contacts,Email,Organization,Url,,
 Creator,"California Department  of Education, Assessment Development and Administration Division",caaspp@cde.ca.gov,California Department  of Education,https://caaspp.cde.ca.gov/,,
 Wrangler,Eric Busboom,eric@civicknowledge.com,Civic Knowledge,http://civicknowledge.com,,
-
+,,,,,,
 Section,Documentation,Title,Description,Year,,
 Documentation,file:README.md,README,,,,
 Homepage,https://caaspp.cde.ca.gov/,CAASPP Homepage,,,,
@@ -25,7 +25,7 @@ Downloadpage,http://www3.cde.ca.gov/caasppresearchfiles/,Base Download,Web direc
 Homepage,https://caaspp.cde.ca.gov/sb2017/ResearchFileList?ps=true&lstTestType=B&lstCounty=00&lstCntyNam=Select%20County...&lstTestYear=2015,"CAASPP Download page, 2015",Dataset page for 2015,2015,,
 Homepage,https://caaspp.cde.ca.gov/sb2017/ResearchFileList?ps=true&lstTestType=B&lstCounty=00&lstCntyNam=Select%20County...&lstTestYear=2016,"CAASPP Download page, 2016",Dataset page for 2016,2016,,
 Homepage,https://caaspp.cde.ca.gov/sb2017/ResearchFileList?ps=true&lstTestType=B&lstCounty=00&lstCntyNam=Select%20County...&lstTestYear=2017,"CAASPP Download page, 2017",Dataset page for 2017,2017,,
-
+,,,,,,
 Section,References,Name,Description,Year,Group,
 Reference,http://www3.cde.ca.gov/caasppresearchfiles/2017/sb/sb_ca2015_all_csv_v3.zip#sb_ca2015entities_csv.txt&target_format=csv,entities15,"Entities, 2015",2015,entities,
 Reference,http://www3.cde.ca.gov/caasppresearchfiles/2017/sb/sb_ca2016_all_csv_v3.zip#sb_ca2016entities_csv.txt&target_format=csv&encoding=latin1,entities16,"Entities, 2016",2016,entities,
@@ -35,75 +35,75 @@ Reference,http://www3.cde.ca.gov/caasppresearchfiles/2017/sb/sb_ca2015_all_csv_v
 Reference,http://www3.cde.ca.gov/caasppresearchfiles/2017/sb/sb_ca2016_all_csv_v3.zip#sb_ca2016_all_csv_v3.txt&target_format=csv,subgroups16,Subgroups 2016,2016,subgroups,
 Reference,http://www3.cde.ca.gov/caasppresearchfiles/2017/sb/sb_ca2017_all_csv_v2.zip#sb_ca2017_all_csv_v2.txt&target_format=csv,subgroups17,Subgroups 2017,2017,subgroups,
 Reference,http://www3.cde.ca.gov/caasppresearchfiles/2018/sb/sb_ca2018_all_csv_v3.zip#sb_ca2018_all_csv_v3.txt&target_format=csv,subgroups18,Subgroups 2018,2018,subgroups,
-
+,,,,,,
 Section,Resources,Name,Description,Group,RefArgs,Schema
 Datafile,data/Subgroups.csv,subgroup_ids,Subgroup codes and names,,,
 Datafile,data/tests.csv,test_ids,Test codes and names,,,
-Datafile,python:metapack.rowgenerator#copy_reference_group,subgroups,Combined subgroups file,subgroups,Year,
-Datafile,python:metapack.rowgenerator#copy_reference_group,entities,Combined entities file,entities,Year,
-
-Section,Schema,DataType,Description,Transform
-Table,subgroups,,,
-Table.Column,year,integer,Source File Year,
-Table.Column,county_code,integer,County Code,
-Table.Column,district_code,integer,District Code,
-Table.Column,school_code,integer,School Code,
-Table.Column,filler,string,Filler,
-Table.Column,test_year,integer,Test Year,
-Table.Column,subgroup_id,integer,Subgroup ID,
-Table.Column,test_type,string,Test Type,
-Table.Column,total_caaspp_enrollment,integer,Total CAASPP Enrollment,
-Table.Column,total_tested_at_entity_level,integer,Total Tested At Entity Level,^robust_int
-Table.Column,total_tested_with_scores,unknown,Total Tested with Scores,
-Table.Column,total_tested_at_subgroup_level,integer,Total Tested at Subgroup Level,
-Table.Column,grade,integer,Grade,
-Table.Column,test_id,integer,Test Id,
-Table.Column,caaspp_reported_enrollment,integer,CAASPP Reported Enrollment,^robust_int
-Table.Column,students_tested,integer,Students Tested,^robust_int
-Table.Column,mean_scale_score,string,Mean Scale Score,
-Table.Column,percentage_standard_exceeded,string,Percentage Standard Exceeded,
-Table.Column,percentage_standard_met,string,Percentage Standard Met,
-Table.Column,percentage_standard_met_and_above,string,Percentage Standard Met and Above,
-Table.Column,percentage_standard_nearly_met,string,Percentage Standard Nearly Met,
-Table.Column,percentage_standard_not_met,string,Percentage Standard Not Met,
-Table.Column,students_with_scores,integer,Students with Scores,^robust_int
-Table.Column,area_1_percentage_above_standard,float,Area 1 Percentage Above Standard,^robust_float
-Table.Column,area_1_percentage_near_standard,float,Area 1 Percentage Near Standard,^robust_float
-Table.Column,area_1_percentage_below_standard,float,Area 1 Percentage Below Standard,^robust_float
-Table.Column,area_1_percentage_at_or_near_standard,float,Area 1 Percentage At or Near Standard,^robust_float
-Table.Column,area_2_percentage_above_standard,float,Area 2 Percentage Above Standard,^robust_float
-Table.Column,area_2_percentage_near_standard,float,Area 2 Percentage Near Standard,^robust_float
-Table.Column,area_2_percentage_below_standard,float,Area 2 Percentage Below Standard,^robust_float
-Table.Column,area_2_percentage_at_or_near_standard,float,Area 2 Percentage At or Near Standard,^robust_float
-Table.Column,area_3_percentage_above_standard,float,Area 3 Percentage Above Standard,^robust_float
-Table.Column,area_3_percentage_near_standard,float,Area 3 Percentage Near Standard,^robust_float
-Table.Column,area_3_percentage_at_or_near_standard,float,Area 3 Percentage At or Near Standard,^robust_float
-Table.Column,area_3_percentage_below_standard,float,Area 3 Percentage Below Standard,^robust_float
-Table.Column,area_4_percentage_above_standard,float,Area 4 Percentage Above Standard,^robust_float
-Table.Column,area_4_percentage_near_standard,float,Area 4 Percentage Near Standard,^robust_float
-Table.Column,area_4_percentage_at_or_near_standard,float,Area 4 Percentage At or Near Standard,^robust_float
-Table.Column,area_4_percentage_below_standard,float,Area 4 Percentage Below Standard,^robust_float
-Table,entities,,,
-Table.Column,year,integer,Source File Year,
-Table.Column,county_code,integer,County Code,
-Table.Column,district_code,integer,District Code,
-Table.Column,school_code,integer,School Code,
-Table.Column,filler,string,Filler,
-Table.Column,test_year,integer,Test Year,
-Table.Column,type_id,integer,Type Id,
-Table.Column,county_name,string,County Name,
-Table.Column,district_name,string,District Name,
-Table.Column,school_name,string,School Name,
-Table.Column,zip_code,string,Zip Code,
-Table,subgroup_ids,,,
-Table.Column,code,integer,,
-Table.Column,label,string,,
-Table.Column,group,string,,
-Table,tests,,,
-Table.Column,test_id,integer,,
-Table.Column,test_num,integer,,
-Table.Column,test_name,string,,
-Table,test_ids,,,
-Table.Column,test_id,integer,,
-Table.Column,test_num,integer,,
-Table.Column,test_name,string,,
+Datafile,python:metapack_build.rowgenerator#copy_reference_group,subgroups,Combined subgroups file,subgroups,Year,
+Datafile,python:metapack_build.rowgenerator#copy_reference_group,entities,Combined entities file,entities,Year,
+,,,,,,
+Section,Schema,DataType,Description,Transform,,
+Table,subgroups,,,,,
+Table.Column,year,integer,Source File Year,,,
+Table.Column,county_code,integer,County Code,,,
+Table.Column,district_code,integer,District Code,,,
+Table.Column,school_code,integer,School Code,,,
+Table.Column,filler,string,Filler,,,
+Table.Column,test_year,integer,Test Year,,,
+Table.Column,subgroup_id,integer,Subgroup ID,,,
+Table.Column,test_type,string,Test Type,,,
+Table.Column,total_caaspp_enrollment,integer,Total CAASPP Enrollment,,,
+Table.Column,total_tested_at_entity_level,integer,Total Tested At Entity Level,^robust_int,,
+Table.Column,total_tested_with_scores,unknown,Total Tested with Scores,,,
+Table.Column,total_tested_at_subgroup_level,integer,Total Tested at Subgroup Level,,,
+Table.Column,grade,integer,Grade,,,
+Table.Column,test_id,integer,Test Id,,,
+Table.Column,caaspp_reported_enrollment,integer,CAASPP Reported Enrollment,^robust_int,,
+Table.Column,students_tested,integer,Students Tested,^robust_int,,
+Table.Column,mean_scale_score,string,Mean Scale Score,,,
+Table.Column,percentage_standard_exceeded,string,Percentage Standard Exceeded,,,
+Table.Column,percentage_standard_met,string,Percentage Standard Met,,,
+Table.Column,percentage_standard_met_and_above,string,Percentage Standard Met and Above,,,
+Table.Column,percentage_standard_nearly_met,string,Percentage Standard Nearly Met,,,
+Table.Column,percentage_standard_not_met,string,Percentage Standard Not Met,,,
+Table.Column,students_with_scores,integer,Students with Scores,^robust_int,,
+Table.Column,area_1_percentage_above_standard,float,Area 1 Percentage Above Standard,^robust_float,,
+Table.Column,area_1_percentage_near_standard,float,Area 1 Percentage Near Standard,^robust_float,,
+Table.Column,area_1_percentage_below_standard,float,Area 1 Percentage Below Standard,^robust_float,,
+Table.Column,area_1_percentage_at_or_near_standard,float,Area 1 Percentage At or Near Standard,^robust_float,,
+Table.Column,area_2_percentage_above_standard,float,Area 2 Percentage Above Standard,^robust_float,,
+Table.Column,area_2_percentage_near_standard,float,Area 2 Percentage Near Standard,^robust_float,,
+Table.Column,area_2_percentage_below_standard,float,Area 2 Percentage Below Standard,^robust_float,,
+Table.Column,area_2_percentage_at_or_near_standard,float,Area 2 Percentage At or Near Standard,^robust_float,,
+Table.Column,area_3_percentage_above_standard,float,Area 3 Percentage Above Standard,^robust_float,,
+Table.Column,area_3_percentage_near_standard,float,Area 3 Percentage Near Standard,^robust_float,,
+Table.Column,area_3_percentage_at_or_near_standard,float,Area 3 Percentage At or Near Standard,^robust_float,,
+Table.Column,area_3_percentage_below_standard,float,Area 3 Percentage Below Standard,^robust_float,,
+Table.Column,area_4_percentage_above_standard,float,Area 4 Percentage Above Standard,^robust_float,,
+Table.Column,area_4_percentage_near_standard,float,Area 4 Percentage Near Standard,^robust_float,,
+Table.Column,area_4_percentage_at_or_near_standard,float,Area 4 Percentage At or Near Standard,^robust_float,,
+Table.Column,area_4_percentage_below_standard,float,Area 4 Percentage Below Standard,^robust_float,,
+Table,entities,,,,,
+Table.Column,year,integer,Source File Year,,,
+Table.Column,county_code,integer,County Code,,,
+Table.Column,district_code,integer,District Code,,,
+Table.Column,school_code,integer,School Code,,,
+Table.Column,filler,string,Filler,,,
+Table.Column,test_year,integer,Test Year,,,
+Table.Column,type_id,integer,Type Id,,,
+Table.Column,county_name,string,County Name,,,
+Table.Column,district_name,string,District Name,,,
+Table.Column,school_name,string,School Name,,,
+Table.Column,zip_code,string,Zip Code,,,
+Table,subgroup_ids,,,,,
+Table.Column,code,integer,,,,
+Table.Column,label,string,,,,
+Table.Column,group,string,,,,
+Table,tests,,,,,
+Table.Column,test_id,integer,,,,
+Table.Column,test_num,integer,,,,
+Table.Column,test_name,string,,,,
+Table,test_ids,,,,,
+Table.Column,test_id,integer,,,,
+Table.Column,test_num,integer,,,,
+Table.Column,test_name,string,,,,
