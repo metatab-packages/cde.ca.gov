@@ -6,8 +6,8 @@
 GROUPS=cde.ca.gov
 TAGS=education
 
-WP_SITE=local
-#WP_SITE=data.sandiegodata.org
+#WP_SITE=local
+WP_SITE=data.sandiegodata.org
 
 S3_BUCKET=library.metatab.org
 
@@ -18,7 +18,11 @@ cde.ca.gov-frpm \
 cde.ca.gov-caaspp \
 cde.ca.gov-reimbursements \
 cde.ca.gov-cacfp_sites \
-cde.ca.gov-schools 
+cde.ca.gov-schools  \
+cde.ca.gov-enrollment \
+sandiegodata.org-sd_demo_links-ca \
+census.gov-district_demo-ca
+
 
 BROKEN=\
 cde.ca.gov-absenteeism 

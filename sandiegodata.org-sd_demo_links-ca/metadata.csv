@@ -1,0 +1,42 @@
+Declare,metatab-latest
+Title,California School District Links to US Census
+Description,"Links between CDS codes, NCES codes and school district geoids in the US census"
+Identifier,d8529ab5-b00f-4af1-a450-f10440d540d7
+Name,sandiegodata.org-sd_demo_links-ca-4
+Dataset,sd_demo_links
+Origin,sandiegodata.org
+Time,
+Space,ca
+Grain,
+Variant,
+Version,4
+Created,2019-08-08T15:06:24
+Modified,2019-08-08T20:18:03
+Giturl,https://github.com/metatab-packages/cde.ca.gov.git
+""
+Section,Contacts,Email,Organization,Url
+Wrangler,Eric Busboom,eric@civicknowledge.com,Civic Knowledge,http://civicknowledge.com
+""
+Section,Documentation,Title,Description,
+Documentation,file:README.md,README,,
+""
+Section,References,Name,Description,
+Reference,census://2015/5/CA/sdelm/B01003,sdelm,Census elementary school districts for California,
+Reference,census://2015/5/CA/sdsec/B01003,sdsec,Census secondary school districts for California,
+Reference,census://2015/5/CA/sduni/B01003,sduni,Census unified school districts for California,
+Reference,metapack+http://library.metatab.org/sandiegodata.org-county_codes-ca.csv#ca_county_codes,county_codes,Noarty and Census county codes for California,
+Reference,metapack+http://library.metatab.org/cde.ca.gov-schools-1.zip#public_schools,public_schools,California public schools,
+Reference,metapack+http://library.metatab.org/cde.ca.gov-schools-1.zip#school_districts,school_districts,California school districts,
+""
+Section,Resources,Name,Description,
+Datafile,notebooks/make_links.ipynb#df,ca_sd_links,"Links between NCES, CDS and Geoids for California school districts",
+""
+Section,Schema,DataType,Description,Has_Codes
+Table,ca_sd_links,,,
+Table.Column,nces_code,integer,NCES code for district,
+Table.Column,geoid,string,Census Geoid for district,
+Table.Column,cd_code,integer,California County/District code,
+Table.Column,district_name,text,Census name for district,
+Table.Column,sd_type,string,"Type of district: Elementary (elem), Secondary (sec) or Unified (uni)",
+Table.Column,notary_county_code,string,California Notary / Secretary of State county code,
+Table.Column,fips_county_code,string,US Census county / FIPS code.,

@@ -21,9 +21,6 @@ Section,Documentation,Title,Description,,
 Documentation,file:README.md,README,,,
 Homepage,https://www.cde.ca.gov/ls/nu/rs/index.asp,Homepage,,,
 ,,,,,
-,,,,,
-,,,,,
-,,,,,
 Section,References,Name,Group,Year,
 Reference,file:data/cacfpreimburse_2013.csv#&encoding=ascii,cacfpreimburse_2013,cacfpreimburse,2013,
 Reference,file:data/cacfpreimburse_2014.csv#&encoding=ascii,cacfpreimburse_2014,cacfpreimburse,2014,
@@ -57,11 +54,11 @@ Reference,file:data/summerreimburse_2017.csv#&encoding=ascii,summerreimburse_201
 Reference,file:data/summerreimburse_2018.csv#&encoding=ascii,summerreimburse_2018,summerreimburse,2018,
 ,,,,,
 Section,Resources,Name,RefArgs,Group,Description
-Datafile,python:metapack.rowgenerator#copy_reference_group_s,cacfpreimburse,Year,cacfpreimburse,Child and Adult Care Food Program
-Datafile,python:metapack.rowgenerator#copy_reference_group_s,nslpreimburse,Year,nslpreimburse,National School Lunch Program
-Datafile,python:metapack.rowgenerator#copy_reference_group_s,sbpreimburse,Year,sbpreimburse,School Breakfast Program
-Datafile,python:metapack.rowgenerator#copy_reference_group_s,snackreimburse,Year,snackreimburse,Meal Supplements (After-School Snacks) in the National School Lunch Program
-Datafile,python:metapack.rowgenerator#copy_reference_group_s,summerreimburse,Year,summerreimburse,Summer Food Service Program
+Datafile,python:metapack_build.rowgenerator#copy_reference_group_s,cacfpreimburse,Year,cacfpreimburse,Child and Adult Care Food Program
+Datafile,python:metapack_build.rowgenerator#copy_reference_group_s,nslpreimburse,Year,nslpreimburse,National School Lunch Program
+Datafile,python:metapack_build.rowgenerator#copy_reference_group_s,sbpreimburse,Year,sbpreimburse,School Breakfast Program
+Datafile,python:metapack_build.rowgenerator#copy_reference_group_s,snackreimburse,Year,snackreimburse,Meal Supplements (After-School Snacks) in the National School Lunch Program
+Datafile,python:metapack_build.rowgenerator#copy_reference_group_s,summerreimburse,Year,summerreimburse,Summer Food Service Program
 ,,,,,
 ,,,,,
 Section,Schema,DataType,Transform,Description,Altname
@@ -92,7 +89,7 @@ Table.Column,category,string,,,
 Table.Column,free,float,^currency_float,,
 Table.Column,reduced_price,float,^currency_float,,
 Table.Column,paid,float,^currency_float,,
-Table,,,,,
+Table,summerreimburse,,,,
 Table.Column,year,integer,,,
 Table.Column,meal,string,,,
 Table.Column,rural_or_self_prep,float,^currency_float,,
