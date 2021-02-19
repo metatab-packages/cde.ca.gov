@@ -1,6 +1,6 @@
 """ Example pylib functions"""
 
-from metapack.rowgenerator import copy_reference_group
+from metapack_build.rowgenerator import copy_reference_group
 
 
 def row_generator(resource, doc, env, *args, **kwargs):
