@@ -1,0 +1,15 @@
+index,chab17,chab16
+academic_year,﻿AcademicYear,﻿Academic Year
+aggregate_level,AggregateLevel,Aggregate Level
+county_code,CountyCode,County Code
+district_code,DistrictCode,District Code
+school_code,SchoolCode,School Code
+county_name,CountyName,County Name
+district_name,DistrictName,District Name
+school_name,SchoolName,School Name
+charter,CharterYN,Charter
+reporting_category,ReportingCategory,Reporting Category
+cumulative_enrollment,CumulativeEnrollment,Cumulative Enrollment
+eligible_cumulative_enrollment,ChronicAbsenteeismEligibleCumulativeEnrollment,
+chronic_absenteeism_count,ChronicAbsenteeismCount,Chronic Absenteeism Count
+chronic_absenteeism_rate,ChronicAbsenteeismRate,Chronic Absenteeism Rate

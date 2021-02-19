@@ -1,0 +1,360 @@
+Declare,metatab-latest,,,
+Title,California Schools and Districts,,,
+Description,"California public schools, private schools and  districts.",,,
+Identifier,01f8c68a-0b8a-4d9e-b6b9-b6654895b859,,,
+Name,cde.ca.gov-schools-1,,,
+Dataset,schools,,,
+Origin,cde.ca.gov,,,
+Time,,,,
+Space,,,,
+Grain,,,,
+Variant,,,,
+Version,1,,,
+Created,2019-06-16T09:18:56,,,
+Modified,2019-06-16T17:31:04,,,
+Giturl,https://github.com/metatab-packages/cde.ca.gov.git,,,
+,,,,
+Section,Contacts,Email,Organization,Url
+Wrangler,Eric Busboom,eric@civicknowledge.com,Civic Knowledge,http://civicknowledge.com
+,,,,
+Section,Documentation,Title,Description,
+Documentation,file:README.md,README,,
+Downloadpage,https://www.cde.ca.gov/ds/si/ds/pubschls.asp,Public Schools Download Page,,
+Downloadpage,https://www.cde.ca.gov/ds/si/ps/index.asp,Private Schhols Download Page,,
+,,,,
+Section,References,Name,Description,
+,,,,
+Section,Resources,Name,Description,
+Datafile,https://www.cde.ca.gov/schooldirectory/report?rid=dl1&tp=txt#target_format=tsv,public_schools,,
+Datafile,https://www.cde.ca.gov/schooldirectory/report?rid=dl2&tp=txt#target_format=tsv,school_districts,,
+Datafile,https://www.cde.ca.gov/ds/si/ps/documents/privateschools1819.xlsx#headers=2&start=3,private_schools_2019,,
+,,,,
+Section,Schema,DataType,Description,
+Table,private_schools_2019,,,
+Table.Column,affidavit_id,integer,Affidavit ID,
+Table.Column,county,string,County,
+Table.Column,cds_code,string,CDS Code,
+Table.Column,school,text,School,
+Table.Column,street,string,Street,
+Table.Column,city,text,City,
+Table.Column,state,string,State,
+Table.Column,zip,integer,Zip,
+Table.Column,mailing_street,string,Mailing Street,
+Table.Column,mailing_city,string,Mailing City,
+Table.Column,mailing_state,string,Mailing State,
+Table.Column,mailing_zip,string,Mailing Zip,
+Table.Column,area_code,string,Area Code,
+Table.Column,phone_prefix,string,Phone Prefix,
+Table.Column,phone_suffix,string,Phone Suffix,
+Table.Column,email,string,Email,
+Table.Column,email2,string,Email2,
+Table.Column,public_district,string,Public District,
+Table.Column,site_administrator_salutation,string,Site Administrator Salutation,
+Table.Column,site_administrator_first_name,text,Site Administrator First Name,
+Table.Column,site_administrator_last_name,text,Site Administrator Last Name,
+Table.Column,site_administrator_title,string,Site Administrator Title,
+Table.Column,adminstrator_email,string,Adminstrator Email,
+Table.Column,school_type,string,School Type,
+Table.Column,school_accomodations,string,School Accomodations,
+Table.Column,low_grade,string,Low Grade,
+Table.Column,high_grade,string,High Grade,
+Table.Column,diploma_offered,string,Diploma Offered,
+Table.Column,low_grade2,integer,Low Grade2,
+Table.Column,high_grade3,integer,High Grade3,
+Table.Column,kindergarten_enrollment,integer,Kindergarten Enrollment,
+Table.Column,grade_1_enrollment,integer,Grade 1 Enrollment,
+Table.Column,grade_2_enrollment,integer,Grade 2 Enrollment,
+Table.Column,grade_3_enrollment,integer,Grade 3 Enrollment,
+Table.Column,grade_4_enrollment,integer,Grade 4 Enrollment,
+Table.Column,grade_5_enrollment,integer,Grade 5 Enrollment,
+Table.Column,grade_6_enrollment,integer,Grade 6 Enrollment,
+Table.Column,grade_7_enrollment,integer,Grade 7 Enrollment,
+Table.Column,grade_8_enrollment,integer,Grade 8 Enrollment,
+Table.Column,grade_9_enrollment,integer,Grade 9 Enrollment,
+Table.Column,grade_10_enrollment,integer,Grade 10 Enrollment,
+Table.Column,grade_11_enrollment,integer,Grade 11 Enrollment,
+Table.Column,grade_12_enrollment,integer,Grade 12 Enrollment,
+Table.Column,ungraded_elementary_enrollment,integer,Ungraded Elementary Enrollment,
+Table.Column,ungraded_secondary_enrollment,integer,Ungraded Secondary Enrollment,
+Table.Column,total_enrollment,integer,Total Enrollment,
+Table.Column,diploma_offered4,string,Diploma Offered4,
+Table.Column,graduates_2017_18,integer,Graduates 2017-18,
+Table.Column,full_time_teachers,integer,Full Time Teachers,
+Table.Column,part_time_teachers,number,Part Time Teachers,
+Table.Column,administrative_staff,number,Administrative Staff,
+Table.Column,other_staff,integer,Other Staff,
+Table.Column,tax_exempt_501,string,Tax Exempt 501,
+Table.Column,tax_exempt_23701,string,Tax Exempt 23701,
+Table.Column,tax_exempt_214,string,Tax Exempt 214,
+Table.Column,tax_exempt,string,Tax Exempt,
+Table.Column,tax_exempt_not_applicable,string,Tax Exempt Not Applicable,
+Table.Column,religious_denomination,string,Religious Denomination,
+Table.Column,religious_classification,string,Religious Classification,
+Table.Column,director_principal_officer_salutation,string,Director/Principal Officer Salutation,
+Table.Column,director_principal_officer_first_name,string,Director/Principal Officer First Name,
+Table.Column,director_principal_officer_last_name,text,Director/Principal Officer Last Name,
+Table.Column,director_principal_officer_title,string,Director/Principal Officer Title,
+Table.Column,director_principal_officer_email,text,Director/Principal Officer Email,
+Table.Column,custodian_of_records_salutation,string,Custodian of Records Salutation,
+Table.Column,custodian_of_records_first_name,text,Custodian of Records First Name,
+Table.Column,custodian_of_records_last_name,text,Custodian of Records Last Name,
+Table.Column,custodian_of_records_email,string,Custodian of Records Email,
+Table,public_schools,,Description,
+Table.Column,cdscode,integer,"This 14-digit code is the official, unique identification of a school 
+within California. The first two digits identify the county, the next five 
+digits identify the school district, and the last seven digits identify the 
+school.
+Please note that a CDS code ending in '0000000' indicates a district record 
+not a school.",
+Table.Column,ncesdist,string,"This field represents the 7-digit National Center for Educational 
+Statistics (NCES) school district identification number. The first 2 digits 
+identify the state and the last 5 digits identify the school district. 
+Combined, they make a unique 7-digit ID for each school district.",
+Table.Column,ncesschool,string,"This field represents the 5-digit NCES school identification number. The 
+NCESSchool combined with the NCESDist form a unique 12-digit ID for each 
+school.",
+Table.Column,statustype,string,"This field identifies the status of the district. Definitions of the valid 
+status types are listed below:
+
+- *Active:* The district is in operation and providing instructional 
+services.
+- *Closed:* The district is not in operation and no longer providing 
+instructional services.
+- *Merged:* The district has combined with another district or districts.
+- *Pending:* The district has not opened for operation and instructional 
+services yet, but plans to open within the next 9–12 months.",
+Table.Column,county,string,County name.,
+Table.Column,district,string,District or Administrative Authority name.,
+Table.Column,school,text,School name.,
+Table.Column,street,string,"The unabbreviated street (physical) address of this school, district, or 
+administrative authority. Note: Some entities (primarily closed or retired 
+schools) may not have data in this field.",
+Table.Column,streetabr,string,"The abbreviated street address of the school, district, or administrative 
+authority’s physical location. Note: Some records (primarily records of 
+closed or retired schools) may not have data in this field.",
+Table.Column,city,string,"The city where the school, district, or administrative authority is 
+physically located. Note: Some records (primarily records of closed or 
+retired schools) may not have data in this field.",
+Table.Column,zip,string,"The zip code associated with the street address of the school, district, or 
+administrative authority’s physical location. Note: Some records (primarily 
+records of closed or retired schools) may not have data in this field.",
+Table.Column,state,string,"The state in which the school, district, or administrative authority is 
+located.",
+Table.Column,mailstreet,string,"The unabbreviated mailing address of the school, district, or 
+administrative authority (i.e., P.O. Box). Note: 1) Some entities 
+(primarily closed or retired schools) may not have data in this field; 2) 
+Many active entities have not provided a mailing street address. For your 
+convenience we have filled the unpopulated MailStreet cells with Street 
+data.",
+Table.Column,mailstrabr,string,"The abbreviated mailing street address of the school, district, or 
+administrative authority (i.e., P.O. Box).Note: Many active entities have 
+not provided a mailing street address. For your convenience we have filled 
+the unpopulated MailStrAbr cells with StreetAbr data.",
+Table.Column,mailcity,string,"The city associated with the mailing address of the school, district, or 
+administrative authority. Note: Many entities have not provided a mailing 
+address city. For your convenience we have filled the unpopulated MailCity 
+cells with City data.",
+Table.Column,mailzip,string,"The zip code associated with the mailing address of the school, district, 
+or administrative authority. Note: Many entities have not provided a 
+mailing address zip code. For your convenience we have filled the 
+unpopulated MailZip cells with Zip data.",
+Table.Column,mailstate,string,"The state within the mailing address. For your convenience we have filled 
+the unpopulated MailState cells with State data.",
+Table.Column,phone,string,"The area code and phone number of the school, district, or administrative 
+authority.",
+Table.Column,ext,string,"The phone number extension of the school, district, or administrative 
+authority.",
+Table.Column,website,string,"The website address of the school, district, or administrative authority.",
+Table.Column,opendate,string,The date the school opened.,
+Table.Column,closeddate,string,The date the school closed.,
+Table.Column,charter,string,"This field identifies a charter school. The field is coded as follows:
+
+- Y = The school is a charter
+- N = The school is not a charter",
+Table.Column,charternum,string,"The charter school number, which is a 4-digit number assigned to a charter 
+school.",
+Table.Column,fundingtype,string,"Indicates the charter school funding type. Values are as follows:
+
+- Not in CS funding model
+- Locally funded
+- Directly funded",
+Table.Column,doc,integer,"The District Ownership Code (DOC) is the numeric code used to identify the 
+category of the Administrative Authority.
+
+- 00 – County Office of Education
+- 02 – State Board of Education
+- 03 – Statewide Benefit Charter
+- 31 – State Special Schools
+- 34 – Non-school Location*
+- 52 – Elementary School District
+- 54 – Unified School District
+- 56 – High School District
+- 98 – Regional Occupational Center/Program (ROC/P)
+
+*Only the California Education Authority has been included in the 
+non-school location category.",
+Table.Column,doctype,string,"The District Ownership Code Type is the text description of the DOC 
+category.
+
+(See text values in DOC field description above)",
+Table.Column,soc,string,"The School Ownership Code is a numeric code used to identify the type of 
+school.
+
+- 08 – Preschool
+- 09 – Special Education Schools (Public)
+- 10 – County Community
+- 11 – Youth Authority Facilities (CEA)
+- 13 – Opportunity Schools
+- 14 – Juvenile Court Schools
+- 15 – Other County or District Programs
+- 31 – State Special Schools
+- 60 – Elementary School (Public)
+- 61 – Elementary School in 1 School District (Public)
+- 62 – Intermediate/Middle Schools (Public)
+- 63 – Alternative Schools of Choice
+- 64 – Junior High Schools (Public)
+- 65 – K-12 Schools (Public)
+- 66 – High Schools (Public)
+- 67 – High Schools in 1 School District (Public)
+- 68 – Continuation High Schools
+- 69 – District Community Day Schools
+- 70 – Adult Education Centers
+- 98 – Regional Occupational Center/Program (ROC/P)",
+Table.Column,soctype,string,"The School Ownership Code Type is the text description of the type of 
+school.
+(See text values in SOC field description above)",
+Table.Column,edopscode,string,"The Education Option Code is a short text description of the type of 
+education offered.
+
+- ALTSOC – Alternative School of Choice
+- COMM – County Community School
+- COMMDAY – Community Day School
+- CON – Continuation School
+- JUV – Juvenile Court School
+- OPP – Opportunity School
+- YTH – Youth Authority School
+- SSS – State Special School
+- SPEC – Special Education School
+- TRAD – Traditional
+- ROP – Regional Occupational Program
+- HOMHOS – Home and Hospital
+- SPECON – District Consortia Special Education School",
+Table.Column,edopsname,string,"The Educational Option Name is the long text description of the type of 
+education being offered.
+(See text values in EdOPsCode field description above)",
+Table.Column,eilcode,string,"The Educational Instruction Level Code is a short text description of the 
+institution's type relative to the grade range served.
+
+- A – Adult
+- ELEM – Elementary
+- ELEMHIGH – Elementary-High Combination
+- HS – High School
+- INTMIDJR – Intermediate/Middle/Junior High
+- PS – Preschool
+- UG – Ungraded",
+Table.Column,eilname,string,"The Educational Instruction Level Name is the long text description of the 
+institution’s type relative to the grade range served.
+(See text values in EILCode field description above)",
+Table.Column,gsoffered,string,"The grade span offered is the lowest grade and the highest grade offered or 
+supported by the school, district, or administrative authority. This field 
+might differ from the grade span served as reported in the most recent 
+certified California Longitudinal Pupil Achievement (CALPADS) Fall 1 data 
+collection.
+
+For example XYZ School might display the following data:
+
+GSoffered = P–Adult
+GSserved = K–12",
+Table.Column,gsserved,string,"This field represents the grade span served. It is the lowest grade and the 
+highest grade of student enrollment as reported in the most recent 
+certified CALPADS Fall 1 data collection. Only K–12 enrollment is reported 
+through CALPADS. This field may differ from the grade span offered.
+
+Note: Special programs at independent study, alternative education, and 
+special education schools will often exceed the typical grade span for 
+schools of that type (i.e., a high school might serve grades three through 
+twelve).",
+Table.Column,virtual,string,"This field identifies the type of virtual instruction offered by the 
+school. Virtual instruction is instruction in which students and teachers 
+are separated by time and/or location, and interaction occurs via computers 
+and/or telecommunications technologies. The field is coded as follows:
+
+- F = Exclusively Virtual – The school has no physical building where 
+students meet with each other or with teachers, all instruction is virtual.
+- V = Primarily Virtual – The school focuses on a systematic program of 
+virtual instruction but includes some physical meetings among students or 
+with teachers.
+- C = Primarily Classroom – The school offers virtual courses but 
+virtual instruction is not the primary means of instruction.
+- N = Not Virtual – The school does not offer any virtual instruction.
+- P = Partial Virtual – The school offers some, but not all, instruction 
+through virtual instruction. Note: This value was retired and replaced with 
+the Primarily Virtual and Primarily Classroom values beginning with the 
+2016–17 school year.",
+Table.Column,magnet,string,"This field identifies whether a school is a magnet school and/or provides a 
+magnet program. Additional information on magnet schools may be obtained 
+from the CDE Magnets web page. The field is coded as follows:
+
+- Y = Magnet - The school is a magnet school and/or offers a magnet 
+program.
+- N = Not Magnet - The school is not a magnet school and/or does not 
+offer a magnet program.
+
+Note: Preschools and adult education centers do not contain a magnet school 
+indicator.",
+Table.Column,yearroundyn,string,"This field indicates if the school is operating on a year round calendar. 
+More information about year-round education can be found by visiting the CDE 
+Year-Round Education Program Guide web page.",
+Table.Column,federaldfcdistrictid,string,"This field represents the 7-digit National Center for Educational 
+Statistics (NCES) school district identification number for direct funded 
+charter schools. Beginning in February 2019, direct funded charter schools 
+were issued their own federal district ID and should no longer use the 
+federal district ID associated with their authorizing agency.",
+Table.Column,latitude,string,"The angular distance (expressed in degrees) between the location of the 
+school, district, or administrative authority and the equator measured 
+north to south.",
+Table.Column,longitude,string,"The angular distance (expressed in degrees) between the location of the 
+school, district, or administrative authority and the prime meridian 
+(Greenwich, England) measured from west to east.",
+Table.Column,admfname1,string,"The superintendent’s or principal’s first name. Only active and pending 
+districts and schools will display administrator information, if applicable.",
+Table.Column,admlname1,text,"The superintendent’s or principal’s last name. Only active and pending 
+districts and schools will display administrator information, if applicable.",
+Table.Column,admemail1,string,"The superintendent’s or principal’s e-mail address. Only active and pending 
+districts and schools will display administrator information, if applicable.",
+Table.Column,admfname2,string,"The second principal’s first name (optional). Only active and pending 
+school records will display principal information, if applicable.",
+Table.Column,admlname2,string,"The second principal’s last name (optional). Only active and pending school 
+records will display principal information, if applicable.",
+Table.Column,admemail2,string,"The second principal’s e-mail address (optional). Only active and pending 
+school records will display principal information, if applicable.",
+Table.Column,admfname3,string,"The third principal’s first name (optional). Only active and pending school 
+records will display principal information, if applicable.",
+Table.Column,admlname3,string,"The third principal’s last name (optional). Only active and pending school 
+records will display principal information, if applicable.",
+Table.Column,admemail3,string,"The third principal’s e-mail address (optional). Only active and pending 
+school records will display principal information, if applicable.",
+Table.Column,lastupdate,date,The date the record was last updated.,
+Table,school_districts,,,
+Table.Column,cd_code,integer,CD Code,
+Table.Column,county,string,County,
+Table.Column,district,string,District,
+Table.Column,street,string,Street,
+Table.Column,city,string,City,
+Table.Column,zip,string,Zip,
+Table.Column,state,string,State,
+Table.Column,mailstreet,string,MailStreet,
+Table.Column,mailcity,string,MailCity,
+Table.Column,mailzip,string,MailZip,
+Table.Column,mailstate,string,MailState,
+Table.Column,phone,string,Phone,
+Table.Column,ext,string,Ext,
+Table.Column,admfname,text,AdmFName,
+Table.Column,admlname,text,AdmLName,
+Table.Column,admemail,string,AdmEmail,
+Table.Column,latitude,number,Latitude,
+Table.Column,longitude,number,Longitude,
+Table.Column,doc,integer,DOC,
+Table.Column,doctype,string,DOCType,
+Table.Column,statustype,string,StatusType,
+Table.Column,lastupdate,date,LastUpDate,

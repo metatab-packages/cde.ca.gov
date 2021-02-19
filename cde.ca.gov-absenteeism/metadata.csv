@@ -1,59 +1,73 @@
-Declare,metatab-latest,,,
-Title,,,,
-Description,,,,
-Identifier,dc7e52e4-d49d-4c2a-870c-f65e80058824,,,
-Name,cde.ca.gov-absenteeism-1,,,
-Dataset,absenteeism,,,
-Origin,cde.ca.gov,,,
-Time,,,,
-Space,,,,
-Grain,,,,
-Variant,,,,
-Version,1,,,
-Created,2019-04-03T21:13:57,,,
-Modified,2019-04-04T00:15:23,,,
-Giturl,https://github.com/Metatab/metatab-packages.git,,,
-,,,,
-Section,Contacts,Email,Organization,Url
-Wrangler,Eric Busboom,eric@civicknowledge.com,Civic Knowledge,http://civicknowledge.com
-,,,,
-Section,Documentation,Title,Description,
-Documentation,file:README.md,README,,
-Homepage,https://www.cde.ca.gov/ds/sd/sd/filesabd.asp,Dataset Homepage,,
-,,,,
-Section,References,Name,Description,
-,,,,
-Section,Resources,Name,Description,
-Datafile,ftp://ftp.cde.ca.gov/demo/attendance/ChrAbsRate1718.txt#target_format=tsv,chab17,Chronic Absenteeism 2017-2018,
-Datafile,ftp://ftp.cde.ca.gov/demo/attendance/ChrAbsRate1617.txt#target_format=tsv,chab16,Chronic Absenteeism 2016-2017,
-,,,,
-Section,Schema,DataType,Transform,
-Table,chab17,,,
-Table.Column,academic_year,string,,
-Table.Column,aggregate_level,string,,
-Table.Column,county_code,integer,^robust_int,
-Table.Column,district_code,integer,^robust_int,
-Table.Column,school_code,integer,^robust_int,
-Table.Column,county_name,string,,
-Table.Column,district_name,string,,
-Table.Column,school_name,string,,
-Table.Column,charter,string,,
-Table.Column,reporting_category,string,,
-Table.Column,cumulative_enrollment,integer,^robust_int,
-Table.Column,eligible_cumulative_enrollment,integer,^robust_int,
-Table.Column,chronic_absenteeism_count,integer,^robust_int,
-Table.Column,chronic_absenteeism_rate,number,^robust_float,
-Table,chab16,,,
-Table.Column,academic_year,string,,
-Table.Column,aggregate_level,string,,
-Table.Column,county_code,integer,,
-Table.Column,district_code,integer,,
-Table.Column,school_code,integer,,
-Table.Column,county_name,string,,
-Table.Column,district_name,string,,
-Table.Column,school_name,string,,
-Table.Column,charter,string,,
-Table.Column,reporting_category,string,,
-Table.Column,cumulative_enrollment,integer,^robust_int,
-Table.Column,chronic_absenteeism_count,integer,^robust_int,
-Table.Column,chronic_absenteeism_rate,number,^robust_float,
+Declare,metatab-latest,,,,
+Title,Chronic Absenteeism,,,,
+Description,"Student absenteeism data by ethnicity, gender, program subgroup, and grade span.",,,,
+Description,"Chronic absenteeism counts, cumulative enrollment, and chronic absenteeism rate",,,,
+Description,data are provided.,,,,
+Identifier,dc7e52e4-d49d-4c2a-870c-f65e80058824,,,,
+Name,cde.ca.gov-absenteeism-2,,,,
+Dataset,absenteeism,,,,
+Origin,cde.ca.gov,,,,
+Version,2,,,,
+Created,2019-04-03T21:13:57,,,,
+Modified,2019-05-22T19:00:15,,,,
+Giturl,https://github.com/Metatab/metatab-packages.git,,,,
+,,,,,
+Section,Contacts,Email,Organization,Url,
+Wrangler,Eric Busboom,eric@civicknowledge.com,Civic Knowledge,http://civicknowledge.com,
+,,,,,
+Section,Documentation,Title,Description,,
+Documentation,file:README.md,README,,,
+Homepage,https://www.cde.ca.gov/ds/sd/sd/filesabd.asp,Dataset Homepage,,,
+,,,,,
+Section,References,Name,Description,Year,ColMap
+Reference,ftp://ftp.cde.ca.gov/demo/attendance/ChrAbsRate1718.txt#target_format=tsv,chab17,Chronic Absenteeism 2017-2018,17,chronic
+Reference,ftp://ftp.cde.ca.gov/demo/attendance/ChrAbsRate1617.txt#target_format=tsv,chab16,Chronic Absenteeism 2016-2017,16,chronic
+,,,,,
+Section,Resources,Name,Description,Prefix,
+Datafile,python:#colmap&colmap=chronic,chronic_absenteeism,Combined Chronic Absenteeism files,Year,
+,,,,,
+Section,Schema,AltName,DataType,Transform,Description
+Table,chronic_absenteeism,,,,
+Table.Column,year,,integer,,Year taken from the source dataset name.
+Table.Column,academic_year,,string,,The academic year (July 1 – June 30) corresponding to the time period during which the data were collected.
+Table.Column,aggregate_level,,string,,"T = State
+C = County
+D1 = District (All Schools)
+D2 = District (Non-Charter Schools)
+S = School"
+Table.Column,county_code,,integer,^robust_int,A unique two-digit code corresponding to the county.
+Table.Column,district_code,,integer,^robust_int,A unique five-digit code corresponding to the district.
+Table.Column,school_code,,integer,^robust_int,A unique seven-digit code corresponding to the school.
+Table.Column,county_name,,string,,County Name
+Table.Column,district_name,,string,,District or Administrative Authority Name
+Table.Column,school_name,,string,,School Name
+Table.Column,is_charter,,string,,"A ""Y"" or ""N"" value indicating whether a school is a charter school in the current academic year."
+Table.Column,reporting_category,,string,,"RB = African American
+RI = American Indian or Alaska Native
+RA = Asian
+RF = Filipino
+RH = Hispanic or Latino
+RD = Did not Report
+RP = Pacific Islander
+RT = Two or More Races
+RW = White
+GM = Male
+GF = Female
+SE = English Learners
+SD = Students with Disabilities
+SS = Socioeconomically Disadvantaged
+SM = Migrant
+SF = Foster
+SH = Homeless
+GRK = Kindergarten
+GR13 = Grades 1–3
+GR46 = Grades 4–6
+GR78 = Grades 7–8
+GRK8 = Grades K–8
+GR912 = Grades 9–12
+GRUG = Ungraded Elementary and Secondary
+TA = Total"
+Table.Column,cumulative_enrollment,,integer,^robust_int,"Cumulative enrollment consists of the total number of unduplicated primary and short-term enrollments within the academic year (July 1 to June 30), regardless of whether the student is enrolled multiple times within a school or district."
+Table.Column,chronic_absenteeism_count,,integer,^robust_int,Total count of ALL chronically absent students at the selected entity for the selected population using the available filters. Students are determined to be chronically absent if they were enrolled for a combined total of 30 days or more at the selected reporting level during the academic year and they were absent for 10% or more of the days they were expected to attend.
+Table.Column,cumulative_eligible_enrollment,,integer,^robust_int,"This count uses the Cumulative Enrollment of the selected entity as the baseline and removes students that were not eligible to be considered chronically absent at that entity. Students that are enrolled less than 31 instructional days at the selected entity are not eligible to be considered chronically absent at that entity. This is calculated by looking at the number of ""expected days to attend"" that LEAs submit for each student in CALPADS. Students with exempt status are also removed from Chronic Absenteeism eligibility. Students are considered to be exempt if they are enrolled in a Non-Public School (NPS), receive instruction through a home or hospital instructional setting or are attending community college full-time."
+Table.Column,chronic_absenteeism_rate,,number,^robust_float,The unduplicated count of students determined to be chronically absent (Chronic Absenteeism Count) divided by the Chronic Absenteeism Enrollment at the selected entity for the selected population using the available filters.

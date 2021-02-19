@@ -1,0 +1,106 @@
+Declare,metatab-latest
+Title,Enrollment by school
+Description,"School-level enrollment by racial/ethnic designation, gender, and grade."
+Identifier,fc8d4ef4-cafa-4a30-aac5-6e64b7b4c726
+Name,cde.ca.gov-enrollment-1
+Dataset,enrollment
+Origin,cde.ca.gov
+Time,
+Space,
+Grain,
+Variant,
+Version,1
+Created,2019-08-12T18:11:23
+Modified,2019-08-13T18:15:25
+Giturl,https://github.com/metatab-packages/cde.ca.gov.git
+""
+Section,Contacts,Email,Organization,Url,
+Wrangler,Eric Busboom,eric@civicknowledge.com,Civic Knowledge,http://civicknowledge.com,
+""
+Section,Documentation,Title,Description,,
+Documentation,file:README.md,README,,,
+Downloadpage,https://www.cde.ca.gov/ds/sd/sd/filesenr.asp,download_page,Enrollment by School download page,,
+Documentation,https://www.cde.ca.gov/ds/sd/sd/fsenr.asp,data_dictionary,Table columns and descriptions.,,
+""
+Section,References,Name,Group,Year,
+Reference,http://dq.cde.ca.gov/dataquest/dlfile/dlfile.aspx?cLevel=School&cYear=2018-19&cCat=Enrollment&cPage=filesenr.asp#target_format=tsv,enrollment_2018,enrollment,2018,
+Reference,http://dq.cde.ca.gov/dataquest/dlfile/dlfile.aspx?cLevel=School&cYear=2017-18&cCat=Enrollment&cPage=filesenr.asp#target_format=tsv,enrollment_2017,enrollment,2017,
+Reference,http://dq.cde.ca.gov/dataquest/dlfile/dlfile.aspx?cLevel=School&cYear=2016-17&cCat=Enrollment&cPage=filesenr.asp#target_format=tsv,enrollment_2016,enrollment,2016,
+Reference,http://dq.cde.ca.gov/dataquest/dlfile/dlfile.aspx?cLevel=School&cYear=2015-16&cCat=Enrollment&cPage=filesenr.asp#target_format=tsv,enrollment_2015,enrollment,2015,
+Reference,http://dq.cde.ca.gov/dataquest/dlfile/dlfile.aspx?cLevel=School&cYear=2014-15&cCat=Enrollment&cPage=filesenr.asp#target_format=tsv,enrollment_2014,enrollment,2014,
+Reference,http://dq.cde.ca.gov/dataquest/dlfile/dlfile.aspx?cLevel=School&cYear=2013-14&cCat=Enrollment&cPage=filesenr.asp#target_format=tsv,enrollment_2013,enrollment,2013,
+Reference,http://dq.cde.ca.gov/dataquest/dlfile/dlfile.aspx?cLevel=School&cYear=2012-13&cCat=Enrollment&cPage=filesenr.asp#target_format=tsv,enrollment_2012,enrollment,2012,
+Reference,http://dq.cde.ca.gov/dataquest/dlfile/dlfile.aspx?cLevel=School&cYear=2011-12&cCat=Enrollment&cPage=filesenr.asp#target_format=tsv,enrollment_2011,enrollment,2011,
+Reference,http://dq.cde.ca.gov/dataquest/dlfile/dlfile.aspx?cLevel=School&cYear=2010-11&cCat=Enrollment&cPage=filesenr.asp#target_format=tsv,enrollment_2010,enrollment,2010,
+Reference,http://dq.cde.ca.gov/dataquest/dlfile/dlfile.aspx?cLevel=School&cYear=2009-10&cCat=Enrollment&cPage=filesenr.asp#target_format=tsv,enrollment_2009,enrollment,2009,
+Reference,http://dq.cde.ca.gov/dataquest/dlfile/dlfile.aspx?cLevel=School&cYear=2008-09&cCat=Enrollment&cPage=filesenr.asp#target_format=tsv,enrollment_2008,enrollment,2008,
+Reference,http://dq.cde.ca.gov/dataquest/dlfile/dlfile.aspx?cLevel=School&cYear=2007-08&cCat=Enrollment&cPage=filesenr.asp#target_format=tsv,enrollment_2007,enrollment,2007,
+""
+Section,Resources,Name,Description,Group,RefArgs
+Datafile,python:metapack_build.rowgenerator#copy_reference_group,enrollment_07_18,"School enrollment, 2007 to 2018",enrollment,Year
+Datafile,notebooks/raceeth.ipynb#raceeth,race_eth_07_18,Simplified structure for race/ethnicity,,
+""
+Section,Schema,DataType,Description,,
+Table,enrollment_07_18,,,,
+Table.Column,year,integer,File year of source data,,
+Table.Column,cdscode,integer,"This 14-digit code is the official, unique identification of a school 
+within California. The first two digits identify the county, the next five 
+digits identify the school district, and the last seven digits identify the 
+school.",,
+Table.Column,county,string,County name.,,
+Table.Column,district,string,District name.,,
+Table.Column,school,text,School name.,,
+Table.Column,ethnic,integer,"Racial/ethnic designation. This field is coded as follows:
+
+   - Code 0 = Not reported
+   - Code 1 = American Indian or Alaska Native, Not Hispanic
+   - Code 2 = Asian, Not Hispanic
+   - Code 3 = Pacific Islander, Not Hispanic
+   - Code 4 = Filipino, Not Hispanic
+   - Code 5 = Hispanic or Latino
+   - Code 6 = African American, not Hispanic
+   - Code 7 = White, not Hispanic
+   - Code 9 = Two or More Races, Not Hispanic
+
+(See Glossary for complete definitions of the ethnic groups.)",,
+Table.Column,gender,string,"Gender. This field is a coded as follows:
+
+   - M = Male
+   - F = Female",,
+Table.Column,kdgn,integer,Students enrolled in kindergarten.,,
+Table.Column,gr_1,integer,Students enrolled in grade one.,,
+Table.Column,gr_2,integer,Students enrolled in grade two.,,
+Table.Column,gr_3,integer,Students enrolled in grade three.,,
+Table.Column,gr_4,integer,Students enrolled in grade four.,,
+Table.Column,gr_5,integer,Students enrolled in grade five.,,
+Table.Column,gr_6,integer,Students enrolled in grade six.,,
+Table.Column,gr_7,integer,Students enrolled in grade seven.,,
+Table.Column,gr_8,integer,Students enrolled in grade eight.,,
+Table.Column,ungr_elm,integer,"Students enrolled in ungraded elementary classes in grades kindergarten 
+through grade eight.",,
+Table.Column,gr_9,integer,Students enrolled in grade nine.,,
+Table.Column,gr_10,integer,Students enrolled in grade ten.,,
+Table.Column,gr_11,integer,Students enrolled in grade eleven.,,
+Table.Column,gr_12,integer,Students enrolled in grade twelve.,,
+Table.Column,ungr_sec,integer,"Students enrolled in ungraded secondary classes in grades nine through 
+twelve.",,
+Table.Column,enr_total,integer,"Total school enrollment for fields Kindergarten (KDGN) through grade twelve 
+(GR_12) plus ungraded elementary (UNGR_ELM) and ungraded secondary classes 
+(UNGR_SEC). Adults in kindergarten through grade twelve programs are not 
+included.",,
+Table.Column,adult,integer,"Adults enrolled in kindergarten through grade twelve programs. This data 
+does not include adults in independent study.",,
+Table,race_eth_07_18,,,,
+Table.Column,cdscode,integer,"14 digit CDS code, which uniquely identifies schools",,
+Table.Column,year,integer,Year of enrollment data,,
+Table.Column,na,number,Race/Ethnicity not known.,,
+Table.Column,aian,number,"American Indian or Alaska Native, Not Hispanic",,
+Table.Column,asian,number,"Asian, Not Hispanic",,
+Table.Column,pi,number,"Pacific Islander, Not Hispanic",,
+Table.Column,filipino,number,"Filipino, Not Hispanic",,
+Table.Column,hisp,number,Hispanic or Latino,,
+Table.Column,black,number,"African American, not Hispanic",,
+Table.Column,nh_white,number,"White, not Hispanic",,
+Table.Column,unk,number,"Unknown code 8;Code 8 is ""Multiple or No Response"" in the 1998-2006 file structure, but is not defined for the post 2006 file structure.",,
+Table.Column,two_more,number,"Two or More Races, Not Hispanic",,
+Table.Column,total,number,Sum of all other columns,,
